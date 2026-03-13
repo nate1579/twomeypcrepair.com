@@ -1,206 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Template — Twomey Pages</title>
-  <meta name="description" content="Professional business website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twomey PC Repair - The Best Choice for PC Repair in Highland, Arkansas</title>
+    <meta name="description" content="Professional computer, phone, tablet, and console repair services in Highland, Arkansas. Fast turnaround, expert technicians, affordable prices. Serving a 50-mile radius.">
+    <meta name="keywords" content="computer repair, phone repair, tablet repair, console repair, Highland Arkansas, PC repair, laptop repair, Mac repair">
+    <link rel="canonical" href="https://twomeypcrepair.com/">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ── Navbar ── -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="navbar-logo">
-        <img src="assets/images/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <span class="logo-text" style="display:none;">Business Name</span>
-      </a>
-      <ul class="navbar-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="navbar-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ── Hero ── -->
-  <section id="home" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Business Name</h1>
-      <p>Your tagline goes here</p>
-      <div>
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        <a href="#services" class="btn btn-outline">Our Services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── About ── -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Us</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="assets/images/about.jpg" alt="About us" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="about-text">
-          <h3>Who We Are</h3>
-          <p>Business description loads here from config.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Services ── -->
-  <section id="services" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Services</h2>
-        <p>What we can do for you</p>
-        <div class="divider"></div>
-      </div>
-      <div class="services-grid">
-        <!-- Populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Gallery ── -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Work</h2>
-        <p>See what we've done</p>
-        <div class="divider"></div>
-      </div>
-      <div class="gallery-grid">
-        <!-- Populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Testimonials ── -->
-  <section id="testimonials" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <h2>What Our Customers Say</h2>
-        <div class="divider"></div>
-      </div>
-      <div class="testimonials-grid">
-        <!-- Populated by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact ── -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Contact Us</h2>
-        <p>We'd love to hear from you</p>
-        <div class="divider"></div>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-info-item">
-            <div class="icon">📞</div>
-            <div>
-              <h4>Phone</h4>
-              <p><a class="contact-phone-link" href="tel:"><span class="contact-phone"></span></a></p>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">Twomey PC Repair</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="service-area.html" class="nav-link">Service Area</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="tel:8702574444" class="btn btn-primary nav-cta">(870) 257-4444</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">✉️</div>
-            <div>
-              <h4>Email</h4>
-              <p><a class="contact-email-link" href="mailto:"><span class="contact-email"></span></a></p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">📍</div>
-            <div>
-              <h4>Address</h4>
-              <p class="contact-address"></p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon">🕐</div>
-            <div>
-              <h4>Hours</h4>
-              <p class="contact-hours"></p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone">
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+        </nav>
+    </header>
 
-  <!-- ── Map ── -->
-  <div class="map-section">
-    <iframe src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Twomey PC Repair</h1>
+                <p class="tagline">The Best Choice for PC Repair</p>
+                <a href="tel:8702574444" class="btn btn-primary">Call Now: (870) 257-4444</a>
+                <a href="services.html" class="btn btn-secondary" style="margin-left: 1rem;">View Services</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- ── Footer ── -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4 class="footer-business-name">Business Name</h4>
-          <p class="footer-description">Business description.</p>
-          <div class="social-links">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p class="contact-phone"></p>
-          <p class="contact-email"></p>
-          <p class="contact-address"></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-credit"></p>
-      </div>
-    </div>
-  </footer>
+    <!-- Quick Service Highlights -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <p class="text-center" style="font-size: 1.25rem; color: var(--color-gray); margin-bottom: 0;">Expert repair services for all your devices</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20,18V6A2,2 0 0,0 18,4H6A2,2 0 0,0 4,6V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18M18,6V16H13V6H18M6,6H11V16H6V6Z"/>
+                        </svg>
+                    </div>
+                    <h3>Computer Repair</h3>
+                    <p>Desktop and laptop repairs, upgrades, virus removal, and custom builds</p>
+                </div>
 
-  <script src="js/main.js"></script>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z"/>
+                        </svg>
+                    </div>
+                    <h3>Phone & Tablet</h3>
+                    <p>Screen replacements, battery service, charging port repairs, and software fixes</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6,2C4.89,2 4,2.89 4,4V12C4,13.11 4.89,14 6,14H18C19.11,14 20,13.11 20,12V4C20,2.89 19.11,2 18,2H6M6,4H18V12H6V4M4,15C4,15 3,15 3,16V19C3,20 4,20 4,20H20C20,20 21,20 21,19V16C21,15 20,15 20,15H4M7,16.5C7,16.22 7.22,16 7.5,16C7.78,16 8,16.22 8,16.5C8,16.78 7.78,17 7.5,17C7.22,17 7,16.78 7,16.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Game Consoles</h3>
+                    <p>Xbox, PlayStation, and Nintendo repairs including disc drives and HDMI ports</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M22,17V7A2,2 0 0,0 20,5H4A2,2 0 0,0 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17M20,7V17H4V7H20Z"/>
+                        </svg>
+                    </div>
+                    <h3>Apple Devices</h3>
+                    <p>Mac repairs, iPhone and iPad service, screen replacements, and battery service</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>Custom websites for any budget, from small pages to large online stores</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3>On-Site Service</h3>
+                    <p>IT setup, troubleshooting, and pickup/delivery service for phones and tablets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="text-center">Why Choose Twomey PC Repair?</h2>
+            <p class="text-center" style="font-size: 1.25rem; color: var(--color-gray); margin-bottom: 0;">We're committed to providing the best repair experience in Arkansas</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-number">1</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Most repairs completed within 24-48 hours. We know you need your devices working quickly.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">2</div>
+                    <h3>Expert Technicians</h3>
+                    <p>Certified professionals with years of experience in computer and mobile device repair.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">3</div>
+                    <h3>Affordable Prices</h3>
+                    <p>Competitive pricing with no hidden fees. Free estimates on all repairs.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">4</div>
+                    <h3>50-Mile Service Area</h3>
+                    <p>We serve Highland, Arkansas and surrounding communities within a 50-mile radius.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta">
+        <div class="container text-center">
+            <h2>Need Device Repair?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Call us today for a free estimate</p>
+            <a href="tel:8702574444" class="cta-phone">(870) 257-4444</a>
+            <div style="margin-top: 2rem;">
+                <a href="contact.html" class="btn btn-secondary">Get Free Estimate</a>
+                <a href="https://remote.twomey.tech/customer" class="btn btn-secondary" style="margin-left: 1rem;" target="_blank">Remote Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">What Our Customers Say</h2>
+            <p class="text-center" style="font-size: 1.25rem; color: var(--color-gray); margin-bottom: 0;">Real reviews from satisfied customers</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Fixed my laptop screen in one day! Professional service and great communication throughout the process. Highly recommend Twomey PC Repair."</p>
+                    <div class="testimonial-author">— Sarah M., Highland</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"They saved all my files when my computer crashed. The team was honest, affordable, and got my business back up and running quickly."</p>
+                    <div class="testimonial-author">— Mike R., Cherokee Village</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Best phone repair in the area. They replaced my iPhone screen for much less than the Apple Store would have charged. Perfect work!"</p>
+                    <div class="testimonial-author">— Jennifer L., Hardy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="text-center">Visit Our Location</h2>
+            <p class="text-center" style="font-size: 1.25rem; color: var(--color-gray);">2379 HWY 62/412 Suite G, Highland, Arkansas 72542</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.8234567890123!2d-91.5144611!3d36.2703182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c91b0e6ec7c123%3A0x456789abcdef0123!2sTwomey%20PC%20Repair!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><strong>Hours:</strong> Monday–Friday: 8:00 AM – 5:00 PM | Saturday–Sunday: Closed</p>
+                <a href="https://www.google.com/maps/place/Twomey+PC+Repair/@36.2703182,-91.5144611,17z" class="btn btn-primary" target="_blank">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Twomey PC Repair</h3>
+                    <p>Your trusted local technology repair experts serving Highland, Arkansas and surrounding communities. We specialize in computer, phone, tablet, and console repairs with fast, reliable service.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/TwomeyPCRepair" target="_blank" title="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="services.html">Services</a></p>
+                    <p><a href="service-area.html">Service Area</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                    <p><a href="https://remote.twomey.tech/customer" target="_blank">Remote Support</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><a href="tel:8702574444">(870) 257-4444</a></p>
+                    <p><a href="mailto:info@twomeypcrepair.com">info@twomeypcrepair.com</a></p>
+                    <p>2379 HWY 62/412 Suite G<br>Highland, Arkansas 72542</p>
+                    <p><strong>Hours:</strong><br>Mon–Fri: 8:00 AM – 5:00 PM<br>Sat-Sun: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Twomey PC Repair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button (Mobile) -->
+    <a href="tel:8702574444" class="floating-call" title="Call Now">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

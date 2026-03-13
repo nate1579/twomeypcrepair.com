@@ -1,256 +1,155 @@
-/**
- * Twomey Pages Template — Main JS
- * Reads config.json and builds the entire site dynamically.
- * To spin up a new client site: copy the template, edit config.json, deploy.
- */
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-(async function () {
-  const res = await fetch('config.json');
-  const config = await res.json();
-  initTheme(config.theme);
-  initNavbar(config.business);
-  initHero(config);
-  initAbout(config);
-  initServices(config.services);
-  initGallery(config.images.gallery);
-  initTestimonials(config.testimonials);
-  initContact(config);
-  initMap(config.map);
-  initFooter(config);
-  initMobileMenu();
-  initScrollEffects();
-})();
+    // Toggle mobile menu
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
 
-/* ── Theme ── */
-function initTheme(theme) {
-  const r = document.documentElement.style;
-  r.setProperty('--primary', theme.primaryColor);
-  r.setProperty('--secondary', theme.secondaryColor);
-  r.setProperty('--accent', theme.accentColor);
-  r.setProperty('--font-heading', theme.fontHeading);
-  r.setProperty('--font-body', theme.fontBody);
-}
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
 
-/* ── Navbar ── */
-function initNavbar(biz) {
-  const logo = document.querySelector('.navbar-logo');
-  // If a logo image exists, show it; otherwise show text
-  const img = logo.querySelector('img');
-  const text = logo.querySelector('.logo-text');
-  if (text) text.textContent = biz.name;
-}
-
-/* ── Hero ── */
-function initHero(config) {
-  const bg = document.querySelector('.hero-bg');
-  if (config.images.hero) {
-    bg.style.backgroundImage = `url('${config.images.hero}')`;
-  }
-  document.querySelector('.hero h1').textContent = config.business.name;
-  document.querySelector('.hero p').textContent = config.business.tagline;
-}
-
-/* ── About ── */
-function initAbout(config) {
-  const aboutImg = document.querySelector('.about-image img');
-  if (aboutImg && config.images.about) {
-    aboutImg.src = config.images.about;
-    aboutImg.alt = config.business.name;
-  }
-  const aboutText = document.querySelector('.about-text p');
-  if (aboutText) aboutText.textContent = config.business.description;
-}
-
-/* ── Services ── */
-function initServices(services) {
-  const grid = document.querySelector('.services-grid');
-  if (!grid || !services) return;
-  grid.innerHTML = '';
-
-  const icons = {
-    wrench: '🔧', shield: '🛡️', clock: '⏰', star: '⭐',
-    heart: '❤️', bolt: '⚡', globe: '🌐', phone: '📞',
-    truck: '🚚', home: '🏠', tool: '🛠️', chart: '📊',
-    laptop: '💻', paint: '🎨', camera: '📷', leaf: '🍃'
-  };
-
-  services.forEach(s => {
-    const card = document.createElement('div');
-    card.className = 'service-card';
-    card.innerHTML = `
-      <div class="service-icon">${icons[s.icon] || '⭐'}</div>
-      <h3>${esc(s.title)}</h3>
-      <p>${esc(s.description)}</p>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-/* ── Gallery ── */
-function initGallery(images) {
-  const grid = document.querySelector('.gallery-grid');
-  if (!grid || !images || images.length === 0) {
-    const section = document.getElementById('gallery');
-    if (section) section.style.display = 'none';
-    return;
-  }
-  grid.innerHTML = '';
-  images.forEach((src, i) => {
-    const item = document.createElement('div');
-    item.className = 'gallery-item';
-    item.innerHTML = `<img src="${esc(src)}" alt="Gallery image ${i + 1}" loading="lazy">`;
-    grid.appendChild(item);
-  });
-}
-
-/* ── Testimonials ── */
-function initTestimonials(testimonials) {
-  const grid = document.querySelector('.testimonials-grid');
-  if (!grid || !testimonials || testimonials.length === 0) {
-    const section = document.getElementById('testimonials');
-    if (section) section.style.display = 'none';
-    return;
-  }
-  grid.innerHTML = '';
-  testimonials.forEach(t => {
-    const stars = '★'.repeat(t.rating) + '☆'.repeat(5 - t.rating);
-    const card = document.createElement('div');
-    card.className = 'testimonial-card';
-    card.innerHTML = `
-      <div class="quote-mark">"</div>
-      <div class="stars">${stars}</div>
-      <p>${esc(t.text)}</p>
-      <div class="author">— ${esc(t.name)}</div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-/* ── Contact ── */
-function initContact(config) {
-  const biz = config.business;
-  const addr = biz.address;
-
-  setText('.contact-phone', biz.phone);
-  setText('.contact-email', biz.email);
-  setText('.contact-address', `${addr.street}, ${addr.city}, ${addr.state} ${addr.zip}`);
-
-  const hoursEl = document.querySelector('.contact-hours');
-  if (hoursEl) {
-    hoursEl.innerHTML = `${esc(biz.hours.weekdays)}<br>${esc(biz.hours.saturday)}<br>${esc(biz.hours.sunday)}`;
-  }
-
-  // Phone link
-  const phoneLink = document.querySelector('.contact-phone-link');
-  if (phoneLink) phoneLink.href = `tel:${biz.phone.replace(/\D/g, '')}`;
-
-  // Email link
-  const emailLink = document.querySelector('.contact-email-link');
-  if (emailLink) emailLink.href = `mailto:${biz.email}`;
-
-  // Contact form — FormSubmit
-  const form = document.querySelector('.contact-form');
-  if (form && biz.email) {
-    form.action = `https://formsubmit.co/${biz.email}`;
-    form.method = 'POST';
-  }
-}
-
-/* ── Map ── */
-function initMap(map) {
-  const iframe = document.querySelector('.map-section iframe');
-  if (iframe && map && map.embedUrl) {
-    iframe.src = map.embedUrl;
-  }
-}
-
-/* ── Footer ── */
-function initFooter(config) {
-  const biz = config.business;
-  setText('.footer-business-name', biz.name);
-  setText('.footer-description', biz.description);
-
-  const credit = document.querySelector('.footer-credit');
-  if (credit && config.footer) {
-    credit.innerHTML = `© ${new Date().getFullYear()} ${esc(biz.name)}. All rights reserved. | <a href="${esc(config.footer.creditUrl)}" target="_blank">${esc(config.footer.credit)}</a>`;
-  }
-
-  // Social links
-  const socialContainer = document.querySelector('.social-links');
-  if (socialContainer && biz.social) {
-    socialContainer.innerHTML = '';
-    const platforms = {
-      facebook: { icon: 'f', label: 'Facebook' },
-      google: { icon: 'G', label: 'Google' },
-      instagram: { icon: '📸', label: 'Instagram' },
-      twitter: { icon: '𝕏', label: 'Twitter' },
-      youtube: { icon: '▶', label: 'YouTube' }
-    };
-    Object.entries(biz.social).forEach(([key, url]) => {
-      if (!url) return;
-      const p = platforms[key];
-      const a = document.createElement('a');
-      a.href = url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.setAttribute('aria-label', p.label);
-      a.textContent = p.icon;
-      socialContainer.appendChild(a);
-    });
-  }
-}
-
-/* ── Mobile Menu ── */
-function initMobileMenu() {
-  const toggle = document.querySelector('.navbar-toggle');
-  const links = document.querySelector('.navbar-links');
-  if (!toggle || !links) return;
-
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('active');
-  });
-
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => links.classList.remove('active'));
-  });
-}
-
-/* ── Scroll Effects ── */
-function initScrollEffects() {
-  // Navbar background on scroll
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-    } else {
-      navbar.style.boxShadow = '0 1px 10px rgba(0,0,0,0.06)';
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
     }
-  });
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+    // Smooth scroll for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80; // Account for fixed header
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.section').forEach(s => {
-    s.classList.add('fade-in');
-    observer.observe(s);
-  });
-}
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
-/* ── Helpers ── */
-function esc(str) {
-  const d = document.createElement('div');
-  d.textContent = str || '';
-  return d.innerHTML;
-}
+    // Form submission handling
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Add loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.innerHTML = 'Sending...';
+                submitBtn.disabled = true;
+            }
+        });
+    }
 
-function setText(selector, text) {
-  document.querySelectorAll(selector).forEach(el => {
-    el.textContent = text || '';
-  });
-}
+    // Service card animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe service cards and feature items
+    const animatedElements = document.querySelectorAll('.service-card, .feature-item, .testimonial-card, .contact-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Phone number formatting
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+            }
+            this.value = value;
+        });
+    });
+
+    // Add click tracking for analytics (placeholder)
+    const trackClick = function(action, label) {
+        console.log(`Track: ${action} - ${label}`);
+        // Google Analytics or other tracking code would go here
+    };
+
+    // Track CTA clicks
+    const ctaButtons = document.querySelectorAll('.btn-primary, .cta-phone, .floating-call');
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const action = this.classList.contains('cta-phone') || this.classList.contains('floating-call') ? 'phone_call' : 'cta_click';
+            trackClick(action, this.textContent.trim() || 'Call Button');
+        });
+    });
+
+    // Floating call button visibility
+    const floatingCall = document.querySelector('.floating-call');
+    if (floatingCall) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                floatingCall.style.display = 'flex';
+            } else {
+                floatingCall.style.display = 'none';
+            }
+        });
+    }
+});
+
+// Page load optimization
+window.addEventListener('load', function() {
+    // Remove loading class if present
+    document.body.classList.remove('loading');
+    
+    // Lazy load Google Maps iframes
+    const mapIframes = document.querySelectorAll('iframe[data-src]');
+    mapIframes.forEach(iframe => {
+        iframe.src = iframe.dataset.src;
+        iframe.removeAttribute('data-src');
+    });
+});

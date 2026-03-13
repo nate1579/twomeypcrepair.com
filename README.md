@@ -1,25 +1,37 @@
 # Twomey PC Repair
 
-Official website for Twomey PC Repair — Highland, Arkansas.
+Official website for **Twomey PC Repair** — Highland, Arkansas.
 
 **Live site:** [twomeypcrepair.com](https://twomeypcrepair.com)
 
-## Setup
+## Pages
 
-Static site powered by the Twomey Pages template. All content is driven by `config.json`.
+- **Home** (`index.html`) — Hero, service highlights, why choose us, testimonials, map
+- **Services** (`services.html`) — Detailed service cards for all repair types
+- **Service Area** (`service-area.html`) — 50-mile radius coverage, towns served, map
+- **Contact** (`contact.html`) — Contact info cards, service request form, map
 
-- Edit `config.json` to update business info, services, testimonials, etc.
-- Replace images in `assets/images/` (logo.png, hero.jpg, about.jpg)
-- Push to `main` — GitHub Pages auto-deploys
+## Tech
+
+- Vanilla HTML, CSS, JS — no frameworks
+- Responsive mobile-first design
+- CSS custom properties for easy theming
+- SVG icons (inline, no external deps)
+- FormSubmit.co for contact form
+- Google Maps embeds
+- Floating call button on mobile
+
+## Editing
+
+All content is in the HTML files. Brand colors and fonts are in `css/style.css` via CSS custom properties:
+
+```css
+--color-primary: #e87a1e;   /* Orange */
+--color-secondary: #1a1a1a; /* Black */
+```
 
 ## DNS
 
 Point `twomeypcrepair.com` to GitHub Pages:
 - A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
 - Enable HTTPS in repo Settings → Pages
-
-## Images Needed
-
-- `assets/images/logo.png` — Twomey PC Repair logo
-- `assets/images/hero.jpg` — Hero background (1920×1080)
-- `assets/images/about.jpg` — About section photo (800×600)
