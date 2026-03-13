@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCopyrightYear();
     initHeaderScroll();
     initPhoneNumberFormatting();
+    initStatsCounter();
+    initBackToTop();
+    initBusinessHours();
 });
 
 // Mobile Menu Functionality
@@ -406,4 +409,103 @@ if (!document.querySelector('#dynamic-styles')) {
     style.id = 'dynamic-styles';
     style.textContent = errorStyles;
     document.head.appendChild(style);
+}
+
+// Stats Counter Animation
+function initStatsCounter() {
+    const stats = document.querySelectorAll('.stat-number[data-target]');
+    
+    const animateCounter = (stat) => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60 FPS
+        let current = 0;
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    };
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                entry.target.classList.add('animated');
+                animateCounter(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    stats.forEach(stat => observer.observe(stat));
+}
+
+// Back to Top Button
+function initBackToTop() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    if (!backToTopButton) return;
+    
+    window.addEventListener('scroll', debounce(() => {
+        if (window.pageYOffset > 500) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }, 100));
+    
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Business Hours Badge
+function initBusinessHours() {
+    const badge = document.querySelector('.business-status-badge');
+    const statusText = document.querySelector('.status-text');
+    
+    if (!badge || !statusText) return;
+    
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const hour = now.getHours();
+    
+    // Business hours: Mon-Fri 8AM-5PM (closed weekends)
+    const isWeekday = day >= 1 && day <= 5;
+    const isBusinessHour = hour >= 8 && hour < 17;
+    const isOpen = isWeekday && isBusinessHour;
+    
+    if (isOpen) {
+        statusText.textContent = 'Open Today 8AM-5PM';
+        badge.classList.remove('closed');
+    } else if (isWeekday) {
+        // Weekday but outside business hours
+        if (hour < 8) {
+            statusText.textContent = 'Opens at 8AM Today';
+        } else {
+            statusText.textContent = 'Closed - Opens 8AM Tomorrow';
+        }
+        badge.classList.add('closed');
+    } else {
+        // Weekend
+        const nextMonday = new Date(now);
+        nextMonday.setDate(now.getDate() + ((1 + 7 - now.getDay()) % 7 || 7));
+        statusText.textContent = 'Closed - Opens Monday 8AM';
+        badge.classList.add('closed');
+    }
 }

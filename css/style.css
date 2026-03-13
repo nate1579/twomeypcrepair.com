@@ -1,5 +1,4 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+/* Google Fonts loaded via HTML link tags for better performance */
 
 /* CSS Custom Properties */
 :root {
@@ -1082,5 +1081,372 @@ img {
   
   .floating-call {
     animation: none;
+  }
+}
+
+/* ============================================
+   New Features Styles
+   ============================================ */
+
+/* Logo Section with Badge */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.business-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e8f5e8;
+  border: 1px solid #28a745;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #155724;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #28a745;
+  animation: pulse 2s infinite;
+}
+
+.business-status-badge.closed {
+  background: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.business-status-badge.closed .status-dot {
+  background: #dc3545;
+}
+
+/* Mobile CTA Button */
+.mobile-cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary-orange);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 1rem;
+  transition: var(--transition);
+}
+
+.mobile-cta-button:hover {
+  background: #d16a15;
+}
+
+/* Trust Item SVG Styling */
+.trust-item svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: var(--primary-orange);
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--primary-black);
+  color: white;
+  padding: 4rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-orange);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.stat-item:last-child .stat-number::after {
+  content: " ★";
+  color: gold;
+}
+
+.stat-item:first-child .stat-number::after {
+  content: "+";
+}
+
+.stat-item:nth-child(2) .stat-number::after {
+  content: "+";
+}
+
+.stat-item:nth-child(3) .stat-number::after {
+  content: " Mi";
+  font-size: 1.5rem;
+}
+
+/* Feature Icon SVG Styling */
+.feature-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  color: var(--primary-orange);
+}
+
+/* Contact Card Icon SVG Styling */
+.contact-card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  color: var(--primary-orange);
+}
+
+/* Social Link SVG Styling */
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Floating Call SVG Styling */
+.floating-call svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* Website Design Card */
+.website-design-card {
+  background: linear-gradient(135deg, #e87a1e, #f89f4d);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.website-design-card .card-icon {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+
+.website-design-card .card-icon svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.website-design-card .card-content {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.website-design-card .cta-button {
+  background: white;
+  color: var(--primary-orange);
+}
+
+.website-design-card .cta-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Google Reviews CTA */
+.google-reviews-cta {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.reviews-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.google-rating {
+  margin-bottom: 2rem;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.rating-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.rating-stars svg {
+  color: #fbbc05;
+}
+
+.rating-text {
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.google-reviews-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.google-reviews-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.review-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.review-buttons .cta-button {
+  background: white;
+  color: #4285f4;
+}
+
+.review-buttons .cta-button.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.review-buttons .cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.review-buttons .cta-button.secondary:hover {
+  background: white;
+  color: #4285f4;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #d16a15;
+  transform: translateY(-3px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Testimonial Rating SVG Stars */
+.testimonial-rating {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-rating svg {
+  color: #ffc107;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 768px) {
+  .logo-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .business-status-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .review-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .google-reviews-cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .rating-badge {
+    padding: 0.5rem 1rem;
+  }
+  
+  .rating-number {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
   }
 }
