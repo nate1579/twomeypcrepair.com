@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initStatsCounter();
     initBackToTop();
     initBusinessHours();
+    initBlogFilters();
+    initFAQAccordion();
 });
 
 // Mobile Menu Functionality
@@ -494,4 +496,75 @@ function initBusinessHours() {
         statusText.textContent = 'Closed - Opens Monday 8AM';
         badge.classList.add('closed');
     }
+}
+
+// Blog Category Filters
+function initBlogFilters() {
+    const filterBtns = document.querySelectorAll('.blog-filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (filterBtns.length === 0 || blogCards.length === 0) return;
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+            
+            const filter = btn.dataset.filter;
+            
+            blogCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = '';
+                    // Add fade in animation
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// FAQ Accordion Functionality
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (!question || !answer) return;
+        
+        // Initially hide all answers
+        answer.style.display = 'none';
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherAnswer) {
+                        otherAnswer.style.display = 'none';
+                    }
+                }
+            });
+            
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+                answer.style.display = 'none';
+            } else {
+                item.classList.add('active');
+                answer.style.display = 'block';
+            }
+        });
+    });
 }

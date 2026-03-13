@@ -19,12 +19,33 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <img src="assets/images/logo.png" alt="Twomey PC Repair Logo" class="logo">
+                <div class="logo-section">
+                    <img src="assets/images/logo.png" alt="Twomey PC Repair Logo" class="logo">
+                    <div class="business-status-badge">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Open Today 8AM-5PM</span>
+                    </div>
+                </div>
                 
                 <nav class="nav">
                     <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
+                    <div class="nav-dropdown">
+                        <a href="services.html" class="active">Services</a>
+                        <div class="nav-dropdown-menu">
+                            <a href="services/computer-repair.html">Computer Repair</a>
+                            <a href="services/laptop-repair.html">Laptop Repair</a>
+                            <a href="services/mac-repair.html">Mac Repair</a>
+                            <a href="services/phone-repair.html">Phone Repair</a>
+                            <a href="services/tablet-repair.html">Tablet Repair</a>
+                            <a href="services/game-console-repair.html">Game Console Repair</a>
+                            <a href="services/website-design.html">Website Design</a>
+                            <a href="services/onsite.html">On-Site Service</a>
+                        </div>
+                    </div>
                     <a href="service-area.html">Service Area</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="tips.html">Tips</a>
+                    <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </nav>
                 
@@ -43,10 +64,29 @@
         <div class="mobile-menu">
             <ul class="mobile-nav">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li>
+                    <a href="services.html">Services</a>
+                    <ul class="mobile-nav-submenu">
+                        <li><a href="services/computer-repair.html">Computer Repair</a></li>
+                        <li><a href="services/laptop-repair.html">Laptop Repair</a></li>
+                        <li><a href="services/mac-repair.html">Mac Repair</a></li>
+                        <li><a href="services/phone-repair.html">Phone Repair</a></li>
+                        <li><a href="services/tablet-repair.html">Tablet Repair</a></li>
+                        <li><a href="services/game-console-repair.html">Game Console Repair</a></li>
+                        <li><a href="services/website-design.html">Website Design</a></li>
+                        <li><a href="services/onsite.html">On-Site Service</a></li>
+                    </ul>
+                </li>
                 <li><a href="service-area.html">Service Area</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <a href="tel:8702574444" class="mobile-cta-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Call (870) 257-4444
+            </a>
         </div>
     </header>
 
