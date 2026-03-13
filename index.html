@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Template — Twomey Pages</title>
+  <meta name="description" content="Professional business website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-logo">
+        <img src="assets/images/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="logo-text" style="display:none;">Business Name</span>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="navbar-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Business Name</h1>
+      <p>Your tagline goes here</p>
+      <div>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="assets/images/about.jpg" alt="About us" onerror="this.parentElement.style.display='none';">
+        </div>
+        <div class="about-text">
+          <h3>Who We Are</h3>
+          <p>Business description loads here from config.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services ── -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>What we can do for you</p>
+        <div class="divider"></div>
+      </div>
+      <div class="services-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gallery ── -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Work</h2>
+        <p>See what we've done</p>
+        <div class="divider"></div>
+      </div>
+      <div class="gallery-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ── -->
+  <section id="testimonials" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Customers Say</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testimonials-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you</p>
+        <div class="divider"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a class="contact-phone-link" href="tel:"><span class="contact-phone"></span></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a class="contact-email-link" href="mailto:"><span class="contact-email"></span></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p class="contact-address"></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p class="contact-hours"></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Map ── -->
+  <div class="map-section">
+    <iframe src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 class="footer-business-name">Business Name</h4>
+          <p class="footer-description">Business description.</p>
+          <div class="social-links">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="contact-phone"></p>
+          <p class="contact-email"></p>
+          <p class="contact-address"></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-credit"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

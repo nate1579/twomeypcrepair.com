@@ -1,0 +1,108 @@
+{
+  "business": {
+    "name": "Twomey PC Repair",
+    "tagline": "The Best Choice for PC Repair",
+    "description": "At Twomey PC Repair we are experts in fixing computers, cellphones, tablets, and game consoles. Our job is to make your devices work like new again. We can solve any problem, whether it's with the physical parts (hardware) or the programs & software. Located in Highland, Arkansas — serving Sharp County and surrounding areas.",
+    "phone": "(870) 257-4444",
+    "email": "info@twomeypcrepair.com",
+    "address": {
+      "street": "2379 HWY 62/412 Suite G",
+      "city": "Highland",
+      "state": "AR",
+      "zip": "72542"
+    },
+    "hours": {
+      "weekdays": "Mon–Fri: 8:00 AM – 5:00 PM",
+      "saturday": "Sat: Closed",
+      "sunday": "Sun: Closed"
+    },
+    "social": {
+      "facebook": "https://www.facebook.com/TwomeyPCRepair",
+      "google": "https://www.google.com/maps/place/Twomey+PC+Repair+%7C+Cellphone+Repair+%7C+Game+Console+Repair+%7C+Website+Design/@36.2703182,-91.5144611,17z"
+    }
+  },
+  "theme": {
+    "primaryColor": "#e87a1e",
+    "secondaryColor": "#1a1a1a",
+    "accentColor": "#ffffff",
+    "fontHeading": "'Montserrat', sans-serif",
+    "fontBody": "'Open Sans', sans-serif"
+  },
+  "images": {
+    "logo": "assets/images/logo.png",
+    "hero": "assets/images/hero.jpg",
+    "about": "assets/images/about.jpg",
+    "gallery": []
+  },
+  "map": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3219.8!2d-91.5144611!3d36.2703182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d1158b9417beff%3A0xbb50991f658fca08!2sTwomey%20PC%20Repair!5e0!3m2!1sen!2sus"
+  },
+  "services": [
+    {
+      "icon": "laptop",
+      "title": "PC & Laptop Repair",
+      "description": "Hardware and software diagnostics, repairs, and tune-ups. We'll get your computer running like new again."
+    },
+    {
+      "icon": "phone",
+      "title": "Cellphone Repair",
+      "description": "Cracked screens, battery replacements, charging issues, speaker repair, and more. Fast turnaround."
+    },
+    {
+      "icon": "shield",
+      "title": "Virus & Malware Removal",
+      "description": "Expert removal of infections and hacks. We'll clean your system and secure it against future threats."
+    },
+    {
+      "icon": "bolt",
+      "title": "Screen Replacement",
+      "description": "Fast and affordable cracked screen replacement for phones, tablets, and laptops."
+    },
+    {
+      "icon": "wrench",
+      "title": "Upgrades & Custom Builds",
+      "description": "RAM upgrades, SSD installs, and full custom PC builds tailored to your needs and budget."
+    },
+    {
+      "icon": "home",
+      "title": "On-Site Service",
+      "description": "Can't bring it in? We come to you. Call to schedule an on-site visit."
+    },
+    {
+      "icon": "star",
+      "title": "Apple Device Repair",
+      "description": "We work on all Apple devices — iPhones, iPads, MacBooks. Bring them by and we'll take care of you."
+    },
+    {
+      "icon": "globe",
+      "title": "Website Design",
+      "description": "Professional websites for small businesses. Fast, mobile-friendly, and affordable."
+    },
+    {
+      "icon": "tool",
+      "title": "Game Console Repair",
+      "description": "Xbox, PlayStation, Nintendo — we repair all major game consoles."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Google Review",
+      "text": "Great service! They fixed my laptop quickly and it runs better than ever. Highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Google Review",
+      "text": "Professional, fast, and affordable. Got my cracked phone screen replaced same day. Will definitely be back!",
+      "rating": 5
+    },
+    {
+      "name": "Google Review",
+      "text": "Best computer repair shop in the area. They really know what they're doing.",
+      "rating": 5
+    }
+  ],
+  "footer": {
+    "credit": "Website by Twomey PC Repair",
+    "creditUrl": "https://twomeypcrepair.com"
+  }
+}
