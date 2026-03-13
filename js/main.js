@@ -344,22 +344,8 @@ function debounce(func, wait) {
     };
 }
 
-// Parallax effect for hero background (optional enhancement)
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        window.addEventListener('scroll', debounce(() => {
-            const scrolled = window.pageYOffset;
-            const parallax = scrolled * 0.5;
-            hero.style.transform = `translateY(${parallax}px)`;
-        }, 16));
-    }
-}
-
 // Initialize additional features
 window.addEventListener('load', function() {
-    // Any additional initialization after page load
-    initParallax();
     
     // Preload critical images
     const criticalImages = [
