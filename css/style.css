@@ -245,14 +245,6 @@ img {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/><polygon fill="rgba(232,122,30,0.1)" points="0,1000 300,0 1000,0 700,1000"/></svg>');
   background-size: 100% 100%;
-  animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(1deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(10px) rotate(-1deg); }
 }
 
 .hero-content {
